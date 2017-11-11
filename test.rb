@@ -66,13 +66,9 @@ class Login
 
   # Gets index of an element in an array
   def idx(element, array)
-    cont=0
-    for i in array
-      return cont if i == element
-      cont += 1
-    end
-    return cont
+    array.index(element)
   end
+
 end
 
 
