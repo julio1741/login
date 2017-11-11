@@ -41,27 +41,16 @@ class Login
 
   def update_password(user, old_password, new_password)
     # First we check if the user exists
-    user_1 = ''
-    for i in users
-      if i == user
-        user_1 = user
-      end
-    end
-    if user_1 == user
-      index = idx(user, users)
-      if passwords[index] == old_password
-        passwords[index] = new_password
-        return true
-      end
+    if idx(user)
+      index = idx(user)
+       passwords[index] = new_password and return true if passwords[index] == old_password
     end
     return false
   end
 
   def login(user, password)
-    index = idx(user, users)
-    if passwords[index] == password
-      sessions << user
-    end
+    index = idx(user)
+    sessions << user if passwords[index] == password
   end
 
   # Gets index of an element in an array
