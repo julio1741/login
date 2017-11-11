@@ -33,10 +33,10 @@ class Login
     @users.delete user
     @passwords.delete passwords[index]
   end
+
   def check_password(user, password)
-    index = idx(user, users)
-    password_correct = passwords[index] == password
-    return password_correct
+    index = idx(user)
+    passwords[index] == password
   end
 
   def update_password(user, old_password, new_password)
