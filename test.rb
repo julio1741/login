@@ -29,13 +29,10 @@ class Login
   end
 
   def remove_user(user)
-    index = idx(user, users)
-    users[index] = nil
-    passwords[index] = nil
-    users.compact!
-    passwords.compact!
+    index = idx(user)
+    @users.delete user
+    @passwords.delete passwords[index]
   end
-
   def check_password(user, password)
     index = idx(user, users)
     password_correct = passwords[index] == password
