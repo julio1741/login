@@ -24,9 +24,8 @@ class Login
 
   # Register user
   def register_user(user, password)
-    last_index = users.size
-    users[last_index] = user
-    passwords[last_index] = password
+    @users << user
+    @passwords << password
   end
 
   def remove_user(user)
