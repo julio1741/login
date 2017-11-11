@@ -19,15 +19,7 @@ class Login
 
   # Checks if user exists
   def user_exists(user)
-    # Temp variable for storing the user if found
-    temp = ''
-    for i in users
-      if i == user
-        temp = user
-      end
-    end
-    exists = temp != '' && temp == user
-    exists
+    @users.include?(user)
   end
 
   # Register user
