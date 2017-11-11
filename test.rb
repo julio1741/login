@@ -14,10 +14,7 @@ class Login
   end
 
   def logout(user)
-    sessions.each_with_index do |session, i|
-      sessions[i] = nil if session == user
-    end
-    sessions.compact!
+    sessions.delete(user)
   end
 
   # Checks if user exists
